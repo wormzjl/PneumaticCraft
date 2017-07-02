@@ -33,17 +33,17 @@ public class HeatExchangerManager{
         PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.ice, 263, 500);
         PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.packed_ice, 263, 500);
         PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.snow, 268, 1000);
-        PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.torch, 1700, 100000);
-        PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.fire, 1700, 1000);
+        PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.torch, 298, 100000);
+        PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.fire, 298, 1000);
 
         Map<String, Fluid> fluids = FluidRegistry.getRegisteredFluids();
         for(Fluid fluid : fluids.values()) {
             if(fluid.getBlock() != null) {
-                PneumaticRegistry.getInstance().registerBlockExchanger(fluid.getBlock(), fluid.getTemperature(), FLUID_RESISTANCE);
+                PneumaticRegistry.getInstance().registerBlockExchanger(fluid.getBlock(), 298, FLUID_RESISTANCE);
             }
         }
-        PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.flowing_water, FluidRegistry.WATER.getTemperature(), 500);
-        PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.flowing_lava, FluidRegistry.LAVA.getTemperature(), 500);
+        PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.flowing_water, 298, 500);
+        PneumaticRegistry.getInstance().registerBlockExchanger(Blocks.flowing_lava, 298, 500);
     }
 
     public IHeatExchangerLogic getLogic(World world, int x, int y, int z, ForgeDirection side){
