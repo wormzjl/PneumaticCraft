@@ -53,7 +53,7 @@ public class TileEntityRefinery extends TileEntityBase implements IFluidHandler,
      * Kerosine          | - | 3 | 3
      * Diesel            | 4 | 2 | 2
      */
-    public static final int[][] REFINING_TABLE = new int[][]{{4, 0, 0, 2}, {2, 3, 0, 2}, {2, 3, 3, 2}};
+    public static final int[][] REFINING_TABLE = new int[][]{{1, 0, 0, 5}, {1, 2, 0, 5}, {1, 2, 2, 5}};
     private final Fluid[] refiningFluids = getRefiningFluids();
 
     public TileEntityRefinery(){
@@ -61,7 +61,7 @@ public class TileEntityRefinery extends TileEntityBase implements IFluidHandler,
     }
 
     public static Fluid[] getRefiningFluids(){
-        return new Fluid[]{Fluids.diesel, Fluids.kerosene, Fluids.gasoline, Fluids.lpg};
+        return new Fluid[]{Fluids.residualoil, Fluids.fueloil, Fluids.kerosene, Fluids.gasoline};
     }
 
     @Override
@@ -181,7 +181,7 @@ public class TileEntityRefinery extends TileEntityBase implements IFluidHandler,
 
     @Override
     public boolean canFill(ForgeDirection from, Fluid fluid){
-        return Fluids.areFluidsEqual(fluid, Fluids.oil);
+        return Fluids.areFluidsEqual(fluid, Fluids.processedoil);
     }
 
     @Override

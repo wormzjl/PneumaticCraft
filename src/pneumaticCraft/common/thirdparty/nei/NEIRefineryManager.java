@@ -60,7 +60,7 @@ public class NEIRefineryManager extends PneumaticCraftPlugins{
 
         private RefineryNEIRecipe(int refineries, int[] outputs){
             this.refineries = refineries;
-            addInputLiquid(new FluidStack(Fluids.oil, 10), 2, 10);
+            addInputLiquid(new FluidStack(Fluids.processedoil, 10), 2, 10);
             int x = 69;
             int y = 18;
             for(int i = 0; i < outputs.length; i++) {
