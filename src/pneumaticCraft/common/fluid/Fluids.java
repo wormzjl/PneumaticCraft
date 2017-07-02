@@ -44,6 +44,10 @@ public class Fluids{
     public static final Fluid kerosene = new FluidPneumaticCraft("kerosene");
     public static final Fluid diesel = new FluidPneumaticCraft("diesel");
     public static final Fluid lubricant = new FluidPneumaticCraft("lubricant");
+    public static final Fluid residualoil = FluidRegistry.getFluid("residualoil");
+    public static final Fluid fueloil = FluidRegistry.getFluid("fueloil");
+    public static final Fluid processedoil = FluidRegistry.getFluid("processedoil");
+
     public static List<Fluid> fluids = new ArrayList<Fluid>();
     public static Map<Block, Item> fluidBlockToBucketMap = new HashMap<Block, Item>();
     private static Map<String, Block> fluidToBlockMap = new HashMap<String, Block>();//you could theoretically use fluid.getBlock(), but other mods like GregTech break it for some reason.
@@ -64,17 +68,17 @@ public class Fluids{
 
         initializeFluidBlocksAndBuckets();
 
-        PneumaticRegistry.getInstance().registerFuel(oil, 150000);
-        PneumaticRegistry.getInstance().registerFuel(diesel, 700000);
-        PneumaticRegistry.getInstance().registerFuel(kerosene, 1100000);
-        PneumaticRegistry.getInstance().registerFuel(gasoline, 1500000);
-        PneumaticRegistry.getInstance().registerFuel(lpg, 1800000);
+        PneumaticRegistry.getInstance().registerFuel(oil, 150);
+        PneumaticRegistry.getInstance().registerFuel(diesel, 700);
+        PneumaticRegistry.getInstance().registerFuel(kerosene, 1100);
+        PneumaticRegistry.getInstance().registerFuel(gasoline, 1500);
+        PneumaticRegistry.getInstance().registerFuel(lpg, 1800);
 
-        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(oil)), 150000 / 2);
-        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(diesel)), 700000 / 2);
-        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(kerosene)), 1100000 / 2);
-        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(gasoline)), 1500000 / 2);
-        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(lpg)), 1800000 / 2);
+        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(oil)), 150 / 2);
+        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(diesel)), 700 / 2);
+        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(kerosene)), 1100 / 2);
+        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(gasoline)), 1500 / 2);
+        PneumaticCraft.instance.registerFuel(new ItemStack(getBucket(lpg)), 1800 / 2);
 
     }
 
