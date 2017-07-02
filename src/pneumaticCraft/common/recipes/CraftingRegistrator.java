@@ -207,7 +207,7 @@ public class CraftingRegistrator{
 
         addPressureChamberRecipes();
         addAssemblyRecipes();
-        addThermopneumaticProcessingPlantRecipes();
+        //addThermopneumaticProcessingPlantRecipes();
         registerAmadronOffers();
         addCoolingRecipes();
     }
